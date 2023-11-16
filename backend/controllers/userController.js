@@ -38,7 +38,7 @@ exports.login = catchAsyncErrror(async (req,res,next)=>{
         return next(new ErrorHandler("User not found",401));
     }
     // check password is correct or not
-    const isPasswordMatched = user.ComparePassword(password);
+    const isPasswordMatched = await user.ComparePassword(password);
 
     if(!isPasswordMatched){
         return next(new ErrorHandler("Invalid Email or Password",401));
@@ -123,7 +123,7 @@ exports.resetPassword = catchAsyncErrror(async (req,res,next)=>{
         return next(new ErrorHandler("Password not matched",400));
     }
 
-    
+
     user.password = req.body.password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;

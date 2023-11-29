@@ -1,0 +1,161 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+    background-color: white;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: 0.3px 0.5px 3px rgb(116, 81, 243);
+}
+
+
+/* for openMenu and closeMenu */
+.openMenu{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
+}
+.closeMenu{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
+}
+
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    padding-left: 100px;
+    cursor: pointer;
+    position: relative;
+    /* background-color: gray; */
+}
+
+.logo > .logo_img{
+    width: 100px;
+    height: 40px;
+}
+
+.navbars{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    /* background-color: cadetblue; */
+}
+
+.navbars > ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbars > ul > li {
+    margin: auto 20px;
+    list-style: none;
+    font-size: 18px;
+    font-family: "Roboto","Droid Sans","Chilanka";
+    cursor: pointer;
+}
+
+.navbars > ul > li:hover {
+    color: #6000FF;
+}
+
+.user_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    /* background-color: gray; */
+}
+
+.user_info > .login, .signup{
+    height: 40px;
+    width: 70px;
+    margin: 0px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+    background-color: #6000FF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* ----------------------------------- Media Query --------------------------------- */
+@media only screen and (max-width: 600px) {
+
+    /* for openMenu and closeMenu */
+    .openMenu{
+        display: block;
+    }
+    .closeMenu{
+        display: block;
+    }
+
+    .header{
+        height: 80vh;
+        width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(232, 231, 234);
+        border: none;
+    }
+
+    .logo{
+        height: 30%;
+        width: 100%;
+        /* background-color: gray; */
+    }
+
+    .logo > .logo_img{
+        width: 150px;
+        height: 60px;
+        margin-left: -80px;
+    }
+
+
+    .navbars{
+        height: 60%;
+        width: 100%;
+        flex-direction: column;
+        /* background-color: green; */
+    }
+    
+    .navbars > ul{
+        flex-direction: column;
+    }
+    .navbars > ul > li{
+        margin: 20px 0px;
+    }
+
+    .user_info{
+        height: 15%;
+        /* background-color: red; */
+        width: 100%;
+    }
+
+    .hide{
+        margin-top: -100vh;
+        transition: all 0.5s ease-in-out;
+    }
+    .show{
+        margin-top: 0;
+        transition: all 0.5s ease-in-out;
+    }
+}

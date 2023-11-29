@@ -26,11 +26,9 @@ class ApiFeatures{
         removeField.forEach((key) => delete queryCopy[key]);
 
         // convert querycopy into string because we will replace some keywords
-        console.log(queryCopy);
         let queryStr = JSON.stringify(queryCopy);
 
         queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g,key=> `$${key}`);
-        console.log(queryStr);
 
         // convert string into object for mongo query
         this.query = this.query.find(JSON.parse(queryStr));

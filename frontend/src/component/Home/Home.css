@@ -1,0 +1,278 @@
+.banner{
+    /* background-image: linear-gradient(to right,#635dc0,#3027ae); */
+    background: url("https://www.zdnet.com/a/img/resize/052b22418cfe224bd2642004f1238bea28a48e14/2020/02/10/42a343b8-c430-45d0-a1d1-4b2a3b68cbff/tianyi-ma-wionhd-zyi4-unsplash.jpg?auto=webp&fit=crop&height=900&width=1200");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91.7vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: auto;
+}
+
+.banner > h1{
+    margin:  4vmax;
+    font: 600 2.5vmax "Roboto";
+}
+
+.banner > p{
+    font: 300 1.8vmax "Lucida Sans";
+    text-transform: capitalize;
+    margin-left:-200px;
+}
+
+
+/* ********************************************************************/
+.banner > p > span {
+    position: absolute;
+    color: hsl(51, 99%, 50%);
+    text-shadow: 1px 1px white;
+    font-family: "Roboto";
+    letter-spacing: 3px;
+    overflow: hidden;
+    border-right: 2px solid hsl(0, 0%, 80%);
+    white-space: nowrap;
+    animation: typewriter 15s infinite,
+      blinkTextCursor 500ms infinite;
+  }
+  
+  @keyframes typewriter {
+    0% {
+        margin-left: 5px;
+        width: 0;
+    }
+    50% {
+        margin-left: 5px;
+        width: 260px;
+    }
+    100% {
+        margin-left: 5px;
+        width: 0px;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: hsl(0, 0%, 100%);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+
+
+/* ******************************************************************* */
+
+.banner > a > button{
+    margin-bottom: 10vmax;
+    cursor: pointer;
+    background-color: #ff4800;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0;
+    padding: 1vmax;
+    transition: all 0.5s;
+    width: 9vmax;
+    font: 500 1vmax "Roboto";
+}
+
+.banner > a > button:hover{
+    background-color: rgb(255, 255, 255,0);
+    color: white;
+}
+
+
+.home_heading{
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 1.4vmax;
+    border-bottom: 1px solid rgba(21,21,21,0.5);
+    width: 20vmax;
+    margin: 5vmax auto;
+    padding: 1vmax;
+}
+
+
+.container{
+    display: flex;
+    margin: 2vmax auto;
+    width: 80vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    /* background-color: gray; */
+}
+
+
+/* ---------------------------- Product component styling start --------------------------- */
+
+.product_card{
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+}
+
+.product_card > img{
+    width: 14vmax;
+}
+
+.product_card > div{
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+}
+.product_card > div > span{
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+    color: rgb(90, 90, 90);
+    
+}
+.product_card > p{
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+    color: rgb(90, 90, 90);
+}
+
+
+
+.product_card > span{
+    margin: 0.5vmax;
+    color: tomato;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1vmax;
+}
+
+.product_card:hover{
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+    transform: translateY(-1vmax);
+}
+
+
+/* ---------------------------- Product component styling end --------------------------- */
+
+
+
+/* responsive */
+
+@media only screen and (max-width: 600px) {
+
+
+    .container{
+        width: 100vw;
+    }
+    .banner{
+        height: 80vh;
+        background-size: cover;
+    }
+    
+    .banner >p{
+        margin-left: -140px;
+    }
+    .banner >p >span{
+        text-shadow: 0.3px 0.2px white;
+    }
+    @keyframes typewriter {
+        0% {
+            margin-left: 3px;
+            width: 0;
+        }
+        50% {
+            margin-left: 5px;
+            width: 134px;
+        }
+        100% {
+            margin-left: 5px;
+            width: 0px;
+        }
+      }
+
+    .product_card{
+        width: 40vw;
+        margin: 2vmax 1vmax;
+    }
+    
+    .product_card > img{
+        width: 40vw;
+    }
+
+    .product_card > p{
+        font-size: 1.8vmax;
+    
+    }
+
+
+    .product_card > div{
+        margin: 0vmax;
+        display: block;
+    }
+    .product_card > span{
+        font-size: 1.8vmax;
+    }
+    .product_card > div > span{
+        margin: 0 0.5vmax;
+        font: 300 1.6vmax "Roboto";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*  */
+
+
+/* @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+/* Base */
+/* body {
+  padding: 0;
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+h1 {
+  position: relative;
+  color: hsl(0, 0%, 68%);
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 7px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  white-space: nowrap;
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 710px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}  */

@@ -6,8 +6,9 @@
     height: 60px;
     width: 100vw;
     background-color: white;
-    /* border-bottom: 1px solid gray; */
     box-shadow: 0.3px 0.5px 3px rgb(116, 81, 243);
+    position: relative;
+    border-bottom: 2px solid #e75d27;
 }
 
 
@@ -19,6 +20,7 @@
     font-size: 30px;
     top: 10px;
     right: 10px;
+    color: rgb(47, 46, 46);
 }
 .closeMenu{
     display: none;
@@ -27,26 +29,28 @@
     font-size: 30px;
     top: 10px;
     right: 10px;
+    color: rgb(47, 46, 46);
 }
 
 
 .logo{
     display: flex;
-    justify-content: center;
+    width: 30%;
     align-items: center;
-    width: 25%;
+    justify-content: space-between;
+    font-family: "Roboto";
     height: 100%;
     padding-left: 100px;
     cursor: pointer;
     position: relative;
+    color: #ff4800;
     /* background-color: gray; */
 }
 
 .logo > .logo_img{
-    width: 100px;
-    height: 40px;
+    width: 50px;
+    position: relative;
 }
-
 .navbars{
     display: flex;
     justify-content: center;
@@ -70,7 +74,7 @@
 }
 
 .navbars > ul > li:hover {
-    color: #6000FF;
+    color: #ff4800;
 }
 
 .user_info{
@@ -83,13 +87,34 @@
     /* background-color: gray; */
 }
 
-.user_info > .login, .signup{
+.user_info > .cart{
+    font-size: 2.3vmax;
+    color: #ff4800;
+    cursor: pointer;
+    position: relative;
+}
+
+.user_info > .user_image > .user_profile{
+    width: 40px;
+    margin: 0 1vmax;
+    cursor: pointer;
+}
+
+.logout_icon{
+    font-size: 2.1vmax;
+    color:  #ff4800;
+    cursor: pointer;
+}
+
+
+
+.user_info > .login, .signup, .logout{
     height: 40px;
     width: 70px;
     margin: 0px 10px;
     border-radius: 7px;
     font-size: 16px;
-    background-color: #6000FF;
+    background-color:  #ff4800;
     border: none;
     color: white;
     cursor: pointer;
@@ -103,9 +128,11 @@
     /* for openMenu and closeMenu */
     .openMenu{
         display: block;
+        position: fixed;
     }
     .closeMenu{
         display: block;
+        position: fixed;
     }
 
     .header{
@@ -115,23 +142,28 @@
         align-items: flex-start;
         background-color: rgb(232, 231, 234);
         border: none;
+        z-index: 10;
+        position: fixed;
     }
 
     .logo{
-        height: 30%;
+        height: 20%;
         width: 100%;
+        flex-direction: column;
+        justify-content: center;
         /* background-color: gray; */
     }
-
+    .logo >.brandName{
+        display: none;
+    }
     .logo > .logo_img{
-        width: 150px;
-        height: 60px;
-        margin-left: -80px;
+        width: 80px;
+        margin-left: -90px;
     }
 
 
     .navbars{
-        height: 60%;
+        height: 50%;
         width: 100%;
         flex-direction: column;
         /* background-color: green; */
@@ -139,6 +171,7 @@
     
     .navbars > ul{
         flex-direction: column;
+        border-top: 1px solid black;
     }
     .navbars > ul > li{
         margin: 20px 0px;
@@ -147,6 +180,7 @@
     .user_info{
         height: 15%;
         /* background-color: red; */
+        border-top: 1px solid black;
         width: 100%;
     }
 

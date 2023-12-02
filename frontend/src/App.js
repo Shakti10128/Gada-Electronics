@@ -1,13 +1,30 @@
 import { useEffect } from 'react';
 import './App.css';
 import Header from './component/layout/Header/Header.js'
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter, Route,Routes} from "react-router-dom"
 import webfont from 'webfontloader';
+import Home from './component/Home/Home.js'
+import Footer from './component/layout/Footer/Footer.js'
+import useProducts from './customHooks/useProducts.js';
+import { addProducts } from './slices/Product.js';
+import { useDispatch } from 'react-redux'
+import Login from './component/Auth/Login.js';
+import Profile from './component/User/Profile/Profile.js';
+import Cart from './component/User/Cart/Cart.js'
+import Products from './component/AllProducts/Products.js';
 
 
 
 function App() {
+  const data = useProducts();
+  const dispatch = useDispatch();
 
+
+
+  if(data?.data){
+    dispatch(addProducts(data.data));
+  }
+  
   useEffect(()=>{
     webfont.load({
       google:{
@@ -17,9 +34,17 @@ function App() {
   },[])
 
   return (
-    <Router>
-      <Header/>
-    </Router>
+      <BrowserRouter>
+        <Header/>
+            <Routes>
+              <Route path='/auth' element={<Login/>} />
+              <Route path='/' element={<Home/>} />
+              <Route path='/profile' element={<Profile/>} />
+              <Route path='/cart' element={<Cart/>} />
+              <Route path='/products' element={<Products/>} />
+            </Routes>
+        <Footer/>
+      </BrowserRouter>
   );
 }
 

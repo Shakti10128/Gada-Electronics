@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDatabase = require('./config/database.js');
 
 
+
 // Uncaught Error Exception Handler
 process.on("uncaughtException",err=>{
     console.log(`Error: ${err.message}`);
@@ -12,10 +13,15 @@ process.on("uncaughtException",err=>{
 })
 
 
+
+
+
 // config
 dotenv.config({
     path:"backend/config/config.env"
 })
+
+
 
 
 // connecting to database

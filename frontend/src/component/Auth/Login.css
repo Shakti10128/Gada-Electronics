@@ -1,0 +1,141 @@
+
+.auth_container{
+    height: 91.5vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_container > .left_auth_div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(142, 142, 22); */
+}
+
+.left_auth_div > .jethalalLoginImage{
+    width: 45%;
+}
+
+.auth_container > .right_auth_div{
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: rgb(136, 34, 34); */
+}
+
+
+.login_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5vmax;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #faae8f , #fde9e1);
+    /* border: 2px solid #ff4800; */
+    border-radius: 10px;
+    min-height: 90%;
+    min-width: 70%;
+}
+
+
+.login_signup{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    /* background-color: gold; */
+}
+
+.login_div > h1{
+    align-self: flex-start;
+    margin: 1vmax 0;
+    color: white;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.login_signup > input {
+    text-align: start;
+}
+
+.login_signup > input, .auth_button{
+    width: 80%;
+    padding: 0 1vmax;
+    margin: 0.8vmax 0;
+    height: 2.8vmax;
+    align-self: flex-start;
+    border-radius: 5px;
+    font-size: 1vmax;
+}
+
+.login_signup >  .auth_button{
+    background-color: #ff4800;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.login_signup >  .auth_button:hover{
+    background-color: #e75d27;
+    color: black;
+}
+
+.login_div > .dont_account{
+    align-self: flex-start;
+    font-size: 1.5vmax;
+    margin: 1vmax 0;
+    color: rgb(41, 41, 41);
+}
+
+.login_div > .dont_account > p > span{
+    color: #ff4800;
+    font-size: 1.5vmax;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .auth_container > .left_auth_div{
+       display: none;
+    }
+
+    .auth_container > .right_auth_div{
+        width: 100%;
+        justify-content: center;
+        height: 80vh;
+    }
+
+    .login_signup > input, .auth_button{
+        width: 90%;
+        height: 5vmax;
+        font-size: 1.8vmax;
+    }
+
+    .login_div > .dont_account{
+        font-size: 2vmax;
+    }
+    
+    .login_div > .dont_account > p > span{
+        font-size: 2.5vmax;
+        text-underline-offset: 5px;
+    }
+
+
+}

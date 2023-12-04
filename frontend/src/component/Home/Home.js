@@ -22,7 +22,7 @@ const Home = () => {
 
             <a href="#container">
                 <button>
-                    Scroll <CgMouse/>
+                    Scroll <CgMouse className='mouseIcon'/>
                 </button>
             </a>
         </div>

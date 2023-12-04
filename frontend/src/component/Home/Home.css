@@ -28,8 +28,7 @@
 /* ********************************************************************/
 .banner > p > span {
     position: absolute;
-    color: hsl(51, 99%, 50%);
-    text-shadow: 1px 1px white;
+    color: hsl(27, 99%, 50%);
     font-family: "Roboto";
     letter-spacing: 3px;
     overflow: hidden;
@@ -66,7 +65,7 @@
 /* ******************************************************************* */
 
 .banner > a > button{
-    margin-bottom: 10vmax;
+    /* margin-bottom: 10vmax; */
     cursor: pointer;
     background-color: #ff4800;
     color: white;
@@ -77,10 +76,17 @@
     width: 9vmax;
     font: 500 1vmax "Roboto";
 }
+.banner > a > button > .mouseIcon{
+    background-color: #ff4800;
+    border-radius: 5px;
+    color: white;
+}
+.banner > a >:hover{
+    background-color: transparent
+}
 
 .banner > a > button:hover{
     background-color: rgb(255, 255, 255,0);
-    color: white;
 }
 
 
@@ -88,7 +94,7 @@
     text-align: center;
     font-family: "Roboto";
     font-size: 1.4vmax;
-    border-bottom: 1px solid rgba(21,21,21,0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 20vmax;
     margin: 5vmax auto;
     padding: 1vmax;
@@ -130,9 +136,10 @@
     justify-content: flex-start;
 }
 .product_card > div > span{
-    margin: 0.5vmax;
-    font: 300 0.7vmax "Roboto";
-    color: rgb(90, 90, 90);
+    margin: 0.8vmax 0 0 0.3vmax;
+    font: 300 0.8vmax "Roboto";
+    color: rgb(192, 192, 192);
+    font-weight: 600;
     
 }
 .product_card > p{
@@ -140,20 +147,20 @@
     font-size: 1.2vmax;
     margin: 1vmax 0.5vmax;
     margin-bottom: 0;
-    color: rgb(90, 90, 90);
+    color: white;
 }
 
 
 
 .product_card > span{
     margin: 0.5vmax;
-    color: tomato;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1vmax;
 }
 
 .product_card:hover{
-    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+    box-shadow: 0 0 2px #ff4800;
     transform: translateY(-1vmax);
 }
 
@@ -194,6 +201,10 @@
             margin-left: 5px;
             width: 0px;
         }
+      }
+
+      .home_heading{
+        font-size: 2vmax;
       }
 
     .product_card{

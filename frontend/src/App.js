@@ -11,7 +11,8 @@ import { useDispatch } from 'react-redux'
 import Login from './component/Auth/Login.js';
 import Profile from './component/User/Profile/Profile.js';
 import Cart from './component/User/Cart/Cart.js'
-import Products from './component/AllProducts/Products.js';
+import Products from './component/products/AllProducts/Products.js'
+import ProductDetails from './component/products/productDetails/ProductDetails.js';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         families:["Roboto","Droid Sans","Chilanka"]
       }
     })
+    
   },[])
 
   return (
@@ -42,6 +44,7 @@ function App() {
               <Route path='/profile' element={<Profile/>} />
               <Route path='/cart' element={<Cart/>} />
               <Route path='/products' element={<Products/>} />
+              <Route path='/productDetails/:productId' element={<ProductDetails/>} />
             </Routes>
         <Footer/>
       </BrowserRouter>

@@ -5,7 +5,6 @@
     align-items: center;
     height: 60px;
     width: 100vw;
-    background-color: white;
     box-shadow: 0.3px 0.5px 3px rgb(116, 81, 243);
     position: relative;
     border-bottom: 2px solid #e75d27;
@@ -13,6 +12,32 @@
 
 
 /* for openMenu and closeMenu */
+
+.logoAndMenu > .logoImgDevice{
+    height: 50px;
+    /* display: none; */
+    position: absolute;
+    z-index: -10;
+    top: 10px;
+    left: 10px;
+}
+.logoAndMenu > .hidelogo{
+    height: 50px;
+    /* display: none; */
+    position: fixed;
+    z-index: -10;
+    top: 10px;
+    left: 10px;
+}
+.logoAndMenu > .showlogo{
+    height: 50px;
+    /* display: none; */
+    position: fixed;
+    z-index: -10;
+    top: 10px;
+    left: 10px;
+}
+
 .openMenu{
     display: none;
     position: absolute;
@@ -93,11 +118,15 @@
     cursor: pointer;
     position: relative;
 }
+.user_info > .cart:hover{
+    color: #ff4800;
+}
 
 .user_info > .user_image > .user_profile{
     width: 40px;
     margin: 0 1vmax;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .logout_icon{
@@ -126,9 +155,33 @@
 @media only screen and (max-width: 600px) {
 
     /* for openMenu and closeMenu */
+    .logoAndMenu > .logoImgDevice{
+        display: block;
+        /* z-index: -5; */
+        position: fixed;
+    }
+
+    .logoAndMenu > .hidelogo{
+        height: 50px;
+        display: none;
+        position: fixed;
+        z-index: -10;
+        top: 10px;
+        left: 10px;
+    }
+    .logoAndMenu > .showlogo{
+        height: 50px;
+        display: none;
+        position: fixed;
+        z-index: -10;
+        top: 10px;
+        left: 10px;
+    }
+
     .openMenu{
         display: block;
         position: fixed;
+        
     }
     .closeMenu{
         display: block;
@@ -140,7 +193,7 @@
         width: 100vw;
         flex-direction: column;
         align-items: flex-start;
-        background-color: rgb(232, 231, 234);
+        background-color: rgb(28, 24, 24);
         border: none;
         z-index: 10;
         position: fixed;
@@ -171,7 +224,7 @@
     
     .navbars > ul{
         flex-direction: column;
-        border-top: 1px solid black;
+        border-top: 1px solid white;
     }
     .navbars > ul > li{
         margin: 20px 0px;
@@ -180,7 +233,7 @@
     .user_info{
         height: 15%;
         /* background-color: red; */
-        border-top: 1px solid black;
+        border-top: 1px solid white;
         width: 100%;
     }
 

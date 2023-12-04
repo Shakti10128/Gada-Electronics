@@ -12,6 +12,7 @@ import uesrImage from '../../../images/user.png'
 import './Header.css'
 
 const Header = () => {
+
   const isAuth = useSelector(state=>state.user.Token);
   // console.log(isAuth)
   const [istrue,setIstrue] = useState(false);
@@ -34,21 +35,29 @@ const Header = () => {
 
   // logOut Handler
   const logOutHandler = ()=>{
+    if(window.innerWidth < 600){
+      handleOpenCloseMenu();
+    }
     // removing token from the user state
     dispatch(removeTokenfromState());
     localStorage.removeItem("Token")
+    navigate('/')
   }
 
 
   return (
     <div>
       <div className={`header ${istrue ? "show" : "hide"}`}>
-        {istrue ? 
-          <GrClose onClick={()=>setIstrue(!istrue)} className={`openMenu`} /> : 
+        {istrue ?
+        <div className='logoAndMenu'>
+          <img src={logo} alt="" className={`logoImgDevice ${istrue ? "hidelogo" : "showLogo"}`}/>
+          <GrClose onClick={()=>setIstrue(!istrue)} className={`openMenu`} />
+        </div>
+         : 
           <TfiMenu onClick={()=>setIstrue(!istrue)} className={`closeMenu`} />}
         <div className='logo'>
           <img src={logo} alt="Logo" className='logo_img' onClick={()=>handleNavRoutes('/')} />
-          <h1 className="brandName">Gada Electronics</h1>
+          <h1 className="brandName" onClick={()=>handleNavRoutes('/')} >Gada Electronics</h1>
         </div>
         <div className={`navbars`}>
           <ul>
@@ -69,7 +78,7 @@ const Header = () => {
             Sing Up </button>
           }
           {
-            isAuth && window.innerWidth > 600 ? (<TiShoppingCart className='cart'onClick={()=>handleNavRoutes('/cart')}/>) : ""
+            isAuth && window.innerWidth > 600 ? (<TiShoppingCart className='cart' color='green' onClick={()=>handleNavRoutes('/cart')}/>) : ""
           }
 
           {

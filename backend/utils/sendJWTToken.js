@@ -3,6 +3,8 @@
 
 const sendJWTToken = (user,statusCode,res)=>{
     const Token = user.getJWTToken();
+    // we don't want to show the password to someone else
+    user.password = undefined;
 
     // options for cookie
     const options = {

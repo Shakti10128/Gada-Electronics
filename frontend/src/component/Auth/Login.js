@@ -109,7 +109,7 @@ const Login = () => {
                         onChange={(e)=>setConfirmPassword(e.target.value)} />
                     }
                     {
-                        !isLogin &&  <input type="file" required  placeholder='profile picture' />
+                        !isLogin &&  <input type="file" required className='profilePicture'  placeholder='profile picture' />
                     }
                     
                     <button className='auth_button' onClick={loginSignup}>

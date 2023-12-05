@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 91.7vh;
-    width: 100vw;
     overflow: hidden;
 }
 
@@ -80,7 +79,7 @@
 .rightProductDetails > .priceAddcartBtn >.addCartBtnDiv > .addCartBtn > button{
     width: 20px;
     height: 35px;
-    background-color: rgb(28, 24, 24);
+    background-color: rgb(177, 57, 6);
     color: white;
     border: 1px solid white;
     cursor: pointer;

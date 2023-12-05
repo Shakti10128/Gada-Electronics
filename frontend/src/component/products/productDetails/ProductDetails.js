@@ -3,11 +3,14 @@ import './ProductDetails.css'
 import { useParams } from 'react-router-dom'
 import ReactStarts from 'react-rating-stars-component'
 import SimpleImageSlider from "react-simple-image-slider";
+import { addToCartItem } from '../../../slices/CartSlice';
+import {useDispatch} from 'react-redux'
 
 
 
 const ProductDetails = () => {
     const [productDetails,setProductDetails] = useState();
+    const dispatch = useDispatch();
 
     // for rating options
     const options = {
@@ -30,24 +33,7 @@ const ProductDetails = () => {
 
     // handling add to cart actions
     const addToCartHandler = ()=>{
-        if(!localStorage.getItem('cartItems')){
-            localStorage.setItem('cartItems',JSON.stringify(Array({productDetails})));
-        }
-       else{
-        let oldProducts = JSON.parse(localStorage.getItem("cartItems"));
-        console.log(oldProducts);
-        oldProducts.forEach((product)=>{
-            if(product.productDetails?._id == productDetails?._id){
-                console.log("product already added");
-                return;
-            }
-        })
-        oldProducts = [...oldProducts,productDetails];
-        localStorage.clear("cartItems")
-        localStorage.setItem("cartItems",JSON.stringify(oldProducts));
-        oldProducts = [...oldProducts,productDetails];
-        console.log(oldProducts);
-       }
+        dispatch(addToCartItem(productDetails));
     }
 
     useEffect(()=>{

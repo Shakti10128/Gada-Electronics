@@ -19,7 +19,7 @@ const Product = ({product}) => {
             <img src={product.images[0].url} alt={product.name} />
             <p>{product.name}</p>
             <div>
-                <ReactStarts {...options}/> <span>(256 reviews)</span>
+                <ReactStarts {...options} value={product?.ratings}/> <span>(256 reviews)</span>
             </div>
             <span>₹{ product.price}</span>
        </Link>

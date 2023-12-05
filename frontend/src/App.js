@@ -10,9 +10,10 @@ import { addProducts } from './slices/Product.js';
 import { useDispatch } from 'react-redux'
 import Login from './component/Auth/Login.js';
 import Profile from './component/User/Profile/Profile.js';
-import Cart from './component/User/Cart/Cart.js'
 import Products from './component/products/AllProducts/Products.js'
 import ProductDetails from './component/products/productDetails/ProductDetails.js';
+import Cart from './component/products/cart/Cart.js';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -46,6 +47,10 @@ function App() {
               <Route path='/products' element={<Products/>} />
               <Route path='/productDetails/:productId' element={<ProductDetails/>} />
             </Routes>
+            <Toaster
+              position="bottom-center"
+              reverseOrder={false}
+            />
         <Footer/>
       </BrowserRouter>
   );

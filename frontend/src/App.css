@@ -2,13 +2,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   scroll-behavior: smooth;
   color: white;
   background-color: transparent;
 }
 
 body{
-  background-color: rgb(28, 24, 24);
+  background-color: rgb(32, 22, 38)
+  /* background-color: rgb(28, 24, 24); */
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 

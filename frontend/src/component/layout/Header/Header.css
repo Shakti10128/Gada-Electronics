@@ -4,23 +4,14 @@
     justify-content: space-around;
     align-items: center;
     height: 60px;
-    width: 100vw;
-    box-shadow: 0.3px 0.5px 3px rgb(116, 81, 243);
+    box-shadow: 0.3px 0.5px 3px rgb(44, 27, 57);
     position: relative;
-    border-bottom: 2px solid #e75d27;
+    border-bottom: 2px solid #751d87;
+    /* background-color: red; */
 }
 
 
 /* for openMenu and closeMenu */
-
-.logoAndMenu > .logoImgDevice{
-    height: 50px;
-    /* display: none; */
-    position: absolute;
-    z-index: -10;
-    top: 10px;
-    left: 10px;
-}
 .logoAndMenu > .hidelogo{
     height: 50px;
     /* display: none; */
@@ -79,7 +70,7 @@
 .navbars{
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 45%;
     height: 100%;
     /* background-color: cadetblue; */
 }
@@ -193,7 +184,7 @@
         width: 100vw;
         flex-direction: column;
         align-items: flex-start;
-        background-color: rgb(28, 24, 24);
+        background-color: rgba(33, 23, 39, 0.897);
         border: none;
         z-index: 10;
         position: fixed;

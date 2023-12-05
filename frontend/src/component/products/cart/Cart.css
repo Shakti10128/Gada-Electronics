@@ -1,0 +1,156 @@
+.noItemInCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 91.7vh;
+    width: 100vw;
+    font-size: 2vmax;
+
+}
+
+.noItemInCart > p{
+    font-family: "Roboto";
+    margin: 1vmax 0;
+}
+
+.noItemInCart > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    color: red;
+    border-radius: 50%;
+    height: 3vmax;
+    width: 3vmax;
+}
+
+
+.CartContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 91.7;
+    width: 100vw;
+    /* background-color: cadetblue; */
+    padding: 2vmax 0 0 0;
+}
+.CartContainer > .leftCartDiv{
+    min-height: 100%;
+    width: 60%;
+    /* background-color: rgb(68, 8, 8); */
+}
+.CartContainer >.rightCartDiv{
+    height: 80vh;
+    width: 30%;
+    background-color: rgb(200, 116, 116);
+}
+
+
+
+
+/* -------   Cart Product styling   ---------   */
+
+
+.cartPrroduct{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: flex-start;
+    height: 70%;
+    margin: 1vmax 0;
+    border-radius: 10px;
+    background-color: rgba(73, 51, 94, 0.541);
+}
+.cartPrroduct > .productImage{
+    padding: 1vmax 2vmax;
+}
+
+.cartPrroduct > .productImage >.productImg{
+    width:70px;
+    padding: 0.5vmax 0;
+}
+
+
+.cartPrroduct > .namePriceAndbutton{
+    display: flex;
+    flex-direction: column;
+    padding: 1vmax 0;
+    justify-content: space-between;
+}
+
+.cartPrroduct > .namePriceAndbutton >.cartItemProductName{
+    font-size: 1.2vmax;
+    margin-bottom: 0.5vmax;
+}
+.cartPrroduct > .namePriceAndbutton >.cartItmeProductPrice{
+    font-size: 1.5vmax;
+}
+
+.cartPrroduct > .namePriceAndbutton >.quantityAndButton{
+    display: flex;
+}
+
+.cartPrroduct > .namePriceAndbutton >.quantityAndButton> .quantity > input{
+    width: 30px;
+    height:30px;
+    text-align: center;
+    max-width: 40px;
+    border: 1px solid white;
+}
+.cartPrroduct > .namePriceAndbutton >.quantityAndButton> .quantity > button{
+    width: 20px;
+    height: 30px;
+    background-color: rgb(177, 57, 6);
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+
+.cartPrroduct >.namePriceAndbutton>.quantityAndButton >.removeCart{
+    height:35px;
+    color: white;
+    background-color: #ff4800;
+    font-size: 1vmax;
+    margin: 0vmax 1vmax;
+    padding: 0 1vmax;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+/* ************ responsive *****************/
+
+@media only screen and (max-width: 600px) {
+    .CartContainer{
+        flex-direction: column;
+    }
+    .CartContainer >.leftCartDiv{
+        max-height: fit-content;
+        width: 100%;
+        margin: 4vmax 0 0 3vmax;
+    }
+
+    .cartPrroduct > .namePriceAndbutton >.cartItemProductName{
+        font-size: 1.7vmax;
+    }
+    .cartPrroduct > .namePriceAndbutton >.cartItmeProductPrice{
+        font-size: 1.8vmax;
+        margin-top: -4vmax;
+    }
+
+    /* remove cart btn */
+    .cartPrroduct >.namePriceAndbutton>.quantityAndButton >.removeCart{
+        height:35px;
+        font-size: 1.5vmax;
+        margin: 0vmax 2vmax;
+        padding: 0 2vmax;
+        border-radius: 18px;
+        border: none;
+        cursor: pointer;
+    }
+}

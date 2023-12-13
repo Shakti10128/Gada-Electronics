@@ -5,6 +5,7 @@ import ReactStarts from 'react-rating-stars-component'
 import SimpleImageSlider from "react-simple-image-slider";
 import { addToCartItem } from '../../../slices/CartSlice';
 import {useDispatch} from 'react-redux'
+import toast from 'react-hot-toast';
 
 
 
@@ -33,6 +34,10 @@ const ProductDetails = () => {
 
     // handling add to cart actions
     const addToCartHandler = ()=>{
+        if(productDetails?.stock <= 0){
+            toast.error("Item is out of stock")
+            return;
+        }
         dispatch(addToCartItem(productDetails));
     }
 

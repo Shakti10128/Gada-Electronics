@@ -8,7 +8,7 @@ const useProducts = () => {
     },[])
 
     const getData = async()=>{
-        const data = await fetch("http://localhost:4000/api/v1/products",{
+        const data = await fetch("http://localhost:4000/api/v1/TopRatedProducts",{
         method:"GET",
         headers:{
             "Content-Type": "application/json",

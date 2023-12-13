@@ -1,0 +1,81 @@
+.searchFeature{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 4vmax 0 0 0;
+}
+
+.searchFeature > .searchInput{
+    padding: 0.8vmax 0.8vmax;
+    font-size: 1.2vmax;
+    font-family: "Roboto";
+    width: 35vmax;
+    border: 1px solid white;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.searchFeature > .searchButton{
+    padding: 0.8vmax 0.4vmax;
+    font-size: 1.2vmax;
+    font-family: "Roboto";
+    width: 10vmax;
+    border: 1px solid white;
+    background-color: #ff4800;
+    border-left: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    cursor: pointer;
+}
+
+.paginationComponent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationComponent > .pagination{
+    display: flex;
+    /* border: 1px solid white; */
+    margin-bottom: 5vmax;
+}
+.paginationComponent > .pagination:hover{
+    cursor: pointer;
+}
+.paginationComponent > .pagination >li{
+    padding: 0.5vmax 1.5vmax;
+    margin: 0 0.2vmax;
+    border: 1px solid white;
+    background-color: #ff4800;
+    color: white;
+    list-style: none;
+    font-family: "Roboto";
+}
+.paginationComponent > .pagination >.active{
+    background-color: #db4105db;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .searchFeature{
+        margin: 10vmax 0 0 0;
+    }
+    
+    .searchFeature > .searchInput{
+        padding: 1.5vmax 0.8vmax;
+        font-size: 2vmax;
+    }
+    .searchFeature > .searchButton{
+        padding: 1.5vmax 0.4vmax;
+        font-size: 2vmax;
+        width: 10vmax;
+        border: 1px solid white;
+        border-left: none;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+}

@@ -12,22 +12,6 @@
 
 
 /* for openMenu and closeMenu */
-.logoAndMenu > .hidelogo{
-    height: 50px;
-    /* display: none; */
-    position: fixed;
-    z-index: -10;
-    top: 10px;
-    left: 10px;
-}
-.logoAndMenu > .showlogo{
-    height: 50px;
-    /* display: none; */
-    position: fixed;
-    z-index: -10;
-    top: 10px;
-    left: 10px;
-}
 
 .openMenu{
     display: none;
@@ -169,6 +153,10 @@
         left: 10px;
     }
 
+    .logoImgDevice{
+        width: 60px;
+    }
+
     .openMenu{
         display: block;
         position: fixed;
@@ -189,6 +177,7 @@
         z-index: 10;
         position: fixed;
     }
+
 
     .logo{
         height: 20%;

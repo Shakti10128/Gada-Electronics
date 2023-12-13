@@ -13,7 +13,9 @@ import Profile from './component/User/Profile/Profile.js';
 import Products from './component/products/AllProducts/Products.js'
 import ProductDetails from './component/products/productDetails/ProductDetails.js';
 import Cart from './component/products/cart/Cart.js';
+import UserAddress from './component/products/UserAddress/UserAddress.js';
 import { Toaster } from 'react-hot-toast';
+import Loader from './utils/loader/Loader.js';
 
 
 
@@ -23,8 +25,8 @@ function App() {
 
 
 
-  if(data?.data){
-    dispatch(addProducts(data.data));
+  if(data?.topRatedProducts){
+    dispatch(addProducts(data.topRatedProducts));
   }
   
   useEffect(()=>{
@@ -43,9 +45,11 @@ function App() {
               <Route path='/auth' element={<Login/>} />
               <Route path='/' element={<Home/>} />
               <Route path='/profile' element={<Profile/>} />
+              <Route path='/loader' element={<Loader/>} />
               <Route path='/cart' element={<Cart/>} />
               <Route path='/products' element={<Products/>} />
               <Route path='/productDetails/:productId' element={<ProductDetails/>} />
+              <Route path='/order/address' element={<UserAddress/>} />
             </Routes>
             <Toaster
               position="bottom-center"

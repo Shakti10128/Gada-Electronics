@@ -25,7 +25,21 @@ exports.getAllProducts = catchAsyncErrors( async(req,res)=>{
     return res.status(201).json({
         success:true,
         data:product,
-        productCount
+        productCount,
+        filterProductCount:product.length,
+    })
+})
+
+// top rated products
+exports.topRatedProducts = catchAsyncErrors( async(req,res,next)=>{
+    var topRatedProducts = await Product.find().sort({ratings:"descending"}).limit(8);
+    if(!topRatedProducts){
+       return next(new ErrorHandler("Top Ratings Products not found",404));
+    }
+
+    return res.status(200).json({
+        success:true,
+        topRatedProducts,
     })
 })
 

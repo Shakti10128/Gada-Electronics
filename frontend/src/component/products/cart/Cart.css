@@ -41,9 +41,14 @@
     /* background-color: rgb(68, 8, 8); */
 }
 .CartContainer >.rightCartDiv{
-    height: 80vh;
-    width: 30%;
-    background-color: rgb(200, 116, 116);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 20px;
+    height: 50vh;
+    width: 20%;
+    background-color: rgba(73, 51, 94, 0.183);
+    margin: 10vmax 0 8vmax 0;
 }
 
 
@@ -120,6 +125,35 @@
     cursor: pointer;
 }
 
+/* right div styling */
+.rightCartDiv{
+    padding: 2vmax 1vmax;
+}
+
+.rightCartDiv > h1{
+    font-family: "Roboto";
+}
+
+.rightCartDiv > .itemsDetails{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: red; */
+}
+
+.rightCartDiv > .buyNow{
+    height:35px;
+    color: white;
+    background-color: #ff4800;
+    font-size: 1vmax;
+    padding: 0vmax 5vmax;
+    margin: 2vmax 2vmax;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+}
+
 
 
 
@@ -152,5 +186,18 @@
         border-radius: 18px;
         border: none;
         cursor: pointer;
+    }
+
+    /* right div */
+    .CartContainer >.rightCartDiv{
+        height: 50vh;
+        width: 80%;
+        margin-left: 6vmax;
+        padding: 2vmax 2vmax;
+    }
+    
+    
+    .rightCartDiv > .buyNow{
+        font-size: 2.5vmax;
     }
 }

@@ -50,7 +50,6 @@ const Header = () => {
       <div className={`header ${istrue ? "show" : "hide"}`}>
         {istrue ?
         <div className='logoAndMenu'>
-          <img src={logo} alt="" className={`logoImgDevice ${istrue ? "hidelogo" : "showLogo"}`}/>
           <GrClose onClick={()=>setIstrue(!istrue)} className={`openMenu`} />
         </div>
          : 

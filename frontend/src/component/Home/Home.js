@@ -5,6 +5,19 @@ import MetaData from '../layout/MetaData.js'
 import { useSelector } from 'react-redux'
 
 import './Home.css'
+import Loader from '../../utils/loader/Loader.js'
+
+export const ProductContainer = ({products})=>{
+  return(
+    <div className="container" id="container">
+          {
+            products && products.map((product)=>(
+              <Product product={product} key={product._id}/>
+            ))
+          }
+        </div>
+  )
+}
 
 const Home = () => {
 
@@ -12,31 +25,28 @@ const Home = () => {
     // console.log(products)
 
   return (
-    <Fragment>
+    <>
+    {products ? 
+        <div>
+          <MetaData title={"Gada Electronics"}/>
 
-        <MetaData title={"Gada Electronics"}/>
+          <div className='banner'>
+              <p>Welcome To <span>Gada Electronics </span> </p>
+              <h1>FIND AMAZING ELECTRONICS PRODUCTS BELOW</h1>
 
-        <div className='banner'>
-            <p>Welcome To <span>Gada Electronics </span> </p>
-            <h1>FIND AMAZING ELECTRONICS PRODUCTS BELOW</h1>
+              <a href="#container">
+                  <button>
+                      Scroll <CgMouse className='mouseIcon'/>
+                  </button>
+              </a>
+          </div>
 
-            <a href="#container">
-                <button>
-                    Scroll <CgMouse className='mouseIcon'/>
-                </button>
-            </a>
-        </div>
+          <h1 className='home_heading'>Popular Products</h1>
 
-        <h1 className='home_heading'>Featured Products</h1>
+          <ProductContainer products={products}/>
 
-        <div className="container" id="container">
-          {
-            products && products.map((product)=>(
-              <Product product={product} key={product._id}/>
-            ))
-          }
-        </div>
-    </Fragment>
+        </div> : <Loader/>}
+    </>
   )
 }
 

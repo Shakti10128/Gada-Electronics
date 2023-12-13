@@ -1,0 +1,23 @@
+.loaderdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91.7vh;
+    /* background-color: gray; */
+}
+
+.loaderdiv >.loader{
+    height: 10vmax;
+    width: 10vmax;
+    /* background-color: red; */
+    border-bottom: 5px solid rgb(239, 70, 3);
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    animation: loader 0.4s infinite ease-in-out;
+}
+
+@keyframes loader {
+    0%{
+        transform: rotate(-360deg);
+    }
+}

@@ -1,0 +1,69 @@
+.review{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35vh;
+    width: 20vw;
+    margin: 1vmax;
+    /* border: 1px solid rgb(255, 255, 255); */
+    background-color: rgba(17, 3, 27, 0.461);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.review >.logoAndAction{
+    display: flex;
+    height: 25%;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: center;
+    /* background-color: pink; */
+    position: relative;
+}
+
+.review >.logoAndAction >.actions{
+    position: absolute;
+    margin: 0.3vmax -17vmax 0 0;
+    font-size: 1.5vmax;
+}
+.review >.logoAndAction >.actions >.delete{
+    margin: 0 0.3vmax;
+    cursor: pointer;
+}
+.review >.logoAndAction >.actions >.update{
+    cursor: pointer;
+}
+
+.review > .logoAndAction >.userLogo{
+    width: 50px;
+    height: 50px;
+    margin-top: 0.8vmax;
+}
+
+.review >.userName{
+    font-family: "Roboto";
+    text-align: center;
+    margin-top: 0.2vmax;
+}
+
+.review>.reviewRatings{
+    align-self: center;
+}
+
+.review >.comment{
+    padding: 0 1vmax 0.5vmax 1vmax;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .review{
+        width: 80vw;
+    }
+    .review >.logoAndAction >.actions{
+        position: absolute;
+        margin: 0.3vmax -30vmax 0 0;
+        font-size: 3vmax;
+    }
+}

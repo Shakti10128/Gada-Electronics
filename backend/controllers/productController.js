@@ -1,4 +1,5 @@
 const Product = require("../models/productModel.js");
+const User = require("../models/userModel.js")
 const ErrorHandler = require("../utils/errorhandler.js");
 const catchAsyncErrors = require('../middleware/catchAsyncError.js')
 const ApiFeatures = require("../utils/apiFeatures.js");
@@ -99,7 +100,11 @@ exports.deleteProduct = catchAsyncErrors( async(req,res)=>{
 
 // create new review or update new review
 exports.createProductReview = catchAsyncErrors(async (req,res,next)=>{
-    const {rating,comment,productId} = req.body;
+    let {rating,comment,productId} = req.body;
+
+    if(!comment || !rating){
+        return next(new ErrorHandler("Both fields are required",400));
+    }
 
     const review = {
         user:req.user._id,
@@ -107,7 +112,7 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next)=>{
         rating: Number(rating),
         comment,
     }
-    // find produc with the given producId
+    // find product with the given producId
     const product = await Product.findById(productId);
 
     // if already reviewd then convert object id into string to compare
@@ -137,11 +142,11 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next)=>{
 
     product.ratings = avg / product.reviews.length;
 
-    await product.save({validateBeforeSave:false});
+    await product.save({new:true});
 
     return res.status(200).json({
         success:true,
-        messsage:"Reviewed successfully"
+        message:"Reviewed successfully"
     })
 })
 
@@ -150,6 +155,7 @@ exports.createProductReview = catchAsyncErrors(async (req,res,next)=>{
 
 exports.getProductReivews = catchAsyncErrors(async(req,res,next)=>{
     const product = await Product.findById(req.query.id);
+    // console.log(product);
 
     if(!product){
         return next(new ErrorHandler("Product not found",404));
@@ -172,11 +178,10 @@ exports.deleteReivews = catchAsyncErrors(async(req,res,next)=>{
         return next(new ErrorHandler("Product not found",404));
     }
 
-    // filter reveiws without deleting wala reivew
+        // filter reveiws without deleting wala reivew
 
         const reviews = product?.reviews.filter(rev=>rev._id.toString() !== req.query.id.toString());
-        console.log(reviews);
-
+        // console.log(reviews)
         let avg = 0;
 
         reviews.forEach(rev=>{
@@ -194,7 +199,6 @@ exports.deleteReivews = catchAsyncErrors(async(req,res,next)=>{
             numOfReviews
         },{
             new:true,
-            runValidators:true
         })
     
     res.status(200).json({

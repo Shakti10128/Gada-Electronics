@@ -5,6 +5,7 @@
     align-items: center;
     height: 91.7vh;
     overflow: hidden;
+    position: relative;
 }
 
 .leftProductDetails{
@@ -15,6 +16,75 @@
     height: 80%;
     /* border: 1px solid rgb(167, 167, 167); */
 }
+
+.submitReview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60vh;
+    width: 40vw;
+    position: absolute;
+    top: 15vh;
+    left: 30vw;
+    right: 30vw;
+    bottom: 15vh;
+    z-index: 10;
+    background-color: rgba(17, 3, 27, 0.461);
+    backdrop-filter: blur(5px);
+}
+
+.submitReview > .heading_close{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+.submitReview > .heading_close > p{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    padding: 0.25vmax 0.5vmax;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.submitReview > .heading_close > .reviewHanding{
+    font-family: "Roboto";
+    font-size: 2vmax;
+}
+
+.submitReview > ::placeholder{
+    color: white;
+}
+.submitReview >.description{
+    font-size: 1.5vmax;
+    padding: 0.5vmax;
+    border-radius: 10px;
+    height: 40%;
+    width: 60%;
+}
+.submitReview > .reviewButton{
+    cursor: pointer;
+    padding: 0.5vmax 0;
+    width: 60%;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    background-color: #ff4800;
+    color: white;
+}
+.Ratings{
+    background-color: red;
+}
+
+.hideReviewContainer{
+    display: none;
+}
+
+
+
+
 .rightProductDetails{
     display: flex;
     flex-direction: column;
@@ -44,6 +114,7 @@
 .rightProductDetails >.productRatings > span{
     color: rgb(192, 192, 192);
     margin: 0.4vmax 0 0 0.3vmax;
+    font-family: "Roboto";
 }
 
 .rightProductDetails > .priceAddcartBtn{
@@ -136,6 +207,26 @@
 }
 
 
+.ProductReviews{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vmax;
+    overflow: auto;
+}
+
+.ProductReviews >.reviews{
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+    max-width: 65vw;
+    overflow: scroll;
+    margin: 1vmax 0;
+    /* background-color: chartreuse; */
+}
+
+
 
 /* ************ responsive *****************/
 
@@ -150,6 +241,26 @@
         padding: 3vmax 0;
         border: none;
     }
+
+    /* review container css start */
+    .submitReview{
+        top: 85vmax;
+        width: 90vw;
+        left: 3vmax;
+    }
+    .submitReview > .heading_close > .reviewHanding{
+        font-size: 4vmax;
+    }
+    .submitReview >.description{
+        font-size: 2vmax;
+        width: 80%;
+    }
+    .submitReview > .reviewButton{
+        padding: 0.8vmax 0;
+        width: 80%;
+        font-size: 2vmax;
+    }
+    /* review container css end */
     .rightProductDetails{
         width: 100%;
         height: 100%;
@@ -215,5 +326,11 @@
     .rightProductDetails > button{
         font-size: 2vmax;
         padding: 0 4vmax;
+    }
+
+    .ProductReviews >.reviews{
+        max-width: 95vw;
+        /* background-color: chartreuse; */
+        overflow-x: scroll;
     }
 }
